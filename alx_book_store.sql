@@ -14,7 +14,7 @@ try:
 
         # Create database if not exists
         cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
-        print("✅ Database 'alx_book_store' created.")
+        print("Database 'alx_book_store' created.")
 
         # Switch to that database
         cursor.execute("USE alx_book_store")
@@ -74,14 +74,14 @@ try:
         for query in table_definitions:
             cursor.execute(query)
 
-        print("✅ All tables created successfully.")
+        print(" All tables created successfully.")
 
 except Error as err:
-    print(f"❌ Error: {err}")
+    print(f"Error: {err}")
 
 finally:
     if 'cursor' in locals():
         cursor.close()
     if 'connection' in locals() and connection.is_connected():
         connection.close()
-        print("🔒 MySQL connection closed.")
+        print("MySQL connection closed.")
